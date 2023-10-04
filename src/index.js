@@ -3,13 +3,23 @@ import { createRoot } from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Home } from "./pages/Home";
 import { About } from "./pages/About";
-import { Navbar } from "./components/Navbar";
-import { VanList } from "./pages/VanList";
+import { VanList } from "./pages/Vans/VanList";
 import {} from "./style.css";
-import { Footer } from "./components/Footer";
+import { Layout } from "./components/Layout";
 
 import "./server";
-import { VanDetail } from "./pages/VanDetail";
+import { VanDetail } from "./pages/Vans/VanDetail";
+import { HostVanDetails } from "./pages/Host/HostVanDetail";
+// import { HostVanInfo } from "./pages/Host/HostVanInfo";
+import { HostVanPricing } from "./pages/Host/HostVanPricing";
+import { HostVanPhotos } from "./pages/Host/HostVanPhotos";
+// import { Dashboard } from "./pages/Host/Dashboard";
+import { Income } from "./pages/Host/Income";
+import { HostVans } from "./pages/Host/HostVans";
+import { Reviews } from "./pages/Host/Reviews";
+import { HostLayout } from "./components/HostLayout";
+import { Dashboard } from "./pages/Host/Dashboard";
+import { HostVanInfo } from "./pages/Host/HostVanInfo";
 
 const rootElement = document.getElementById("root");
 const root = createRoot(rootElement);
@@ -17,18 +27,28 @@ const root = createRoot(rootElement);
 function App() {
   return (
     <BrowserRouter>
-      <header>
-        <Navbar />
-      </header>
-      <div className="main-content">
-        <Routes>
+      <Routes>
+        <Route element={<Layout />}>
           <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/vans" element={<VanList />} />
-          <Route path="/vans/:id" element={<VanDetail />} />
-        </Routes>
-      </div>
-      <Footer />
+
+          <Route path="host" element={<HostLayout />}>
+            <Route index element={<Dashboard />} />
+            <Route path="income" element={<Income />} />
+            <Route path="vans" element={<HostVans />} />
+            <Route path="vans/:id" element={<HostVanDetails />}>
+              <Route index element={<HostVanInfo />} />
+              <Route path="pricing" element={<HostVanPricing />} />
+              <Route path="photos" element={<HostVanPhotos />} />
+            </Route>
+            <Route path="reviews" element={<Reviews />} />
+          </Route>
+
+          <Route path="about" element={<About />} />
+
+          <Route path="vans" element={<VanList />} />
+          <Route path="vans/:id" element={<VanDetail />} />
+        </Route>
+      </Routes>
     </BrowserRouter>
   );
 }

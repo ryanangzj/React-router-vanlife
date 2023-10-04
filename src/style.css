@@ -48,8 +48,21 @@ body {
   text-decoration: underline;
 }
 
-.about-link {
+.about-link,
+.host-link {
   padding-right: 20px;
+}
+
+.back-button {
+  display: block;
+  color: black;
+  text-decoration: none;
+  margin-top: 60px;
+  margin-left: 26px;
+}
+
+.back-button span:hover {
+  text-decoration: underline;
 }
 
 /*** HOME PAGE ***/
@@ -94,9 +107,148 @@ body {
   transform: translate(1px, 1px);
 }
 
+/*** HOST PAGE ***/
+.host-nav {
+  display: flex;
+}
+
+.host-nav a {
+  text-decoration: none;
+  color: #4d4d4d;
+  font-weight: 500;
+  padding: 5px 20px;
+}
+
+.host-nav a:hover {
+  color: #161616;
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+.host-nav .active-link {
+  color: #161616;
+  text-decoration: underline;
+  font-weight: 600;
+}
+
+/*** Host Van Page ***/
+.host-van-link-wrapper {
+  color: unset;
+  text-decoration: unset;
+}
+
+.host-vans-list {
+  padding-inline: 26px;
+}
+
+.host-vans-title {
+  padding-inline: 26px;
+}
+
+.host-van-single {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  margin-bottom: 15px;
+  padding-block: 18px;
+  padding-left: 24px;
+}
+
+.host-van-single > img {
+  height: 70px;
+  border-radius: 5px;
+  margin-right: 17px;
+}
+
+.host-van-info h3 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-block: 10px;
+}
+
+.host-van-info p {
+  margin-block: 10px;
+}
+
+.host-van-detail-layout-container {
+  background-color: white;
+  padding: 24px;
+  margin: 30px 26px;
+}
+
+.host-van-detail {
+  display: flex;
+  align-items: center;
+}
+
+.host-van-detail > img {
+  height: 160px;
+  border-radius: 5px;
+  margin-right: 20px;
+}
+
+.host-van-detail-info-text > h3 {
+  margin-top: 24px;
+  margin-bottom: 5px;
+  font-size: 26px;
+  font-weight: 700;
+}
+
+.host-van-detail-info-text > h4 {
+  font-size: 20px;
+  margin-block: 0;
+}
+
+.host-van-detail-nav {
+  display: flex;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  gap: 20px;
+}
+
+.host-van-detail-nav a {
+  color: #161616;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.host-van-detail-nav a:hover {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.host-van-detail-nav .active-link {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.host-van-detail-info > h4 {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 21px;
+}
+.host-van-detail-info > h4 > span {
+  font-weight: 500;
+}
+
+.host-van-detail-image {
+  width: 100px;
+  border-radius: 5px;
+}
+
+.host-van-price {
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.host-van-price > span {
+  font-size: 16px;
+  color: #4d4d4d;
+}
+
 /*** ABOUT PAGE ***/
 .about-hero-image {
-  max-width: 100%;
+  width: 100%;
 }
 
 .about-page-content {
