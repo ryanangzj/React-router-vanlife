@@ -4,7 +4,6 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Home } from "./pages/Home";
 import { About } from "./pages/About";
 import { VanList } from "./pages/Vans/VanList";
-import {} from "./style.css";
 import { Layout } from "./components/Layout";
 
 import "./server";
@@ -20,6 +19,9 @@ import { Reviews } from "./pages/Host/Reviews";
 import { HostLayout } from "./components/HostLayout";
 import { Dashboard } from "./pages/Host/Dashboard";
 import { HostVanInfo } from "./pages/Host/HostVanInfo";
+import { NotFound } from "./pages/NotFound";
+
+import {} from "./style.css";
 
 const rootElement = document.getElementById("root");
 const root = createRoot(rootElement);
@@ -28,8 +30,8 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route element={<Layout />}>
-          <Route path="/" element={<Home />} />
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home />} />
 
           <Route path="host" element={<HostLayout />}>
             <Route index element={<Dashboard />} />
@@ -47,6 +49,8 @@ function App() {
 
           <Route path="vans" element={<VanList />} />
           <Route path="vans/:id" element={<VanDetail />} />
+
+          <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
     </BrowserRouter>
