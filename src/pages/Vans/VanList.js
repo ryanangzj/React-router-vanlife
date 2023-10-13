@@ -40,7 +40,7 @@ export function VanList() {
           type: typeFilter,
         }}
       >
-        <img src={van.imageUrl} />
+        <img src={van.imageUrl} alt="" />
         <div className="van-info">
           <h3>{van.name}</h3>
           <p>
