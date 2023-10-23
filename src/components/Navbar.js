@@ -35,6 +35,9 @@ export function Navbar() {
           >
             Vans
           </NavLink>
+          <NavLink to="login" className="navbar-link login-link">
+            <img src="images/Icon.png" className="login-icon" alt="" />
+          </NavLink>
         </div>
       </div>
     </header>
